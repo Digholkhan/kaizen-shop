@@ -1,0 +1,1525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KAIZEN // 改善 — Anime Streetwear & Heavyweight Apparel</title>
+  <meta name="description" content="Limited anime streetwear from Australia & Tokyo. Japanese-inspired heavyweight graphic tees. 240GSM combed cotton. No restocks. Ever.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@600;700;800;900&family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body class="bg-black text-white selection-red">
+
+  <!-- AUDIO SYNTHESIZER HUD / CONTROLLER -->
+  <div id="audio-pill" class="audio-pill" title="Toggle Sound Effects">
+    <div class="audio-wave">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+    <span id="audio-label" class="audio-label">SFX: OFF</span>
+  </div>
+
+  <!-- FLOATING ROTATING CIRCULAR TEXT BADGE ("scroll text circule round all") -->
+  <aside id="circular-badge" class="circular-badge" aria-label="Kaizen Limited Edition Badge" role="button" tabindex="0">
+    <div class="circular-badge__svg-wrap">
+      <svg class="circular-badge__svg" viewBox="0 0 200 200">
+        <defs>
+          <path id="badge-circle-path" d="M 100, 100 m -76, 0 a 76,76 0 1,1 152,0 a 76,76 0 1,1 -152,0" />
+        </defs>
+        <text class="circular-badge__text">
+          <textPath href="#badge-circle-path" startOffset="0%">
+            • KAIZEN STUDIO • NO RESTOCKS EVER • 240GSM HEAVYWEIGHT • TOKYO × SYDNEY •
+          </textPath>
+        </text>
+      </svg>
+    </div>
+    <div class="circular-badge__center">
+      <span class="kanji-glyph">改善</span>
+      <span class="center-sub">DROP 04</span>
+      <div class="center-pulse"></div>
+    </div>
+  </aside>
+
+  <!-- ANNOUNCEMENT TICKER TAPE -->
+  <header class="site-header-wrapper">
+    <div class="announcement-bar">
+      <div class="announcement-track">
+        <span class="announcement-item"><span>// DROP_04 IS LIVE</span> &nbsp;—&nbsp; LIMITED RUN OF 50 PIECES PER SILHOUETTE</span>
+        <span class="announcement-item"><span>// FREE WORLDWIDE EXPRESS</span> ON ORDERS OVER <span class="currency-thresh">$100 AUD</span></span>
+        <span class="announcement-item"><span>// NO RESTOCKS. EVER.</span> ONCE AN ARC SELLS OUT, IT IS ARCHIVED TO THE VAULT</span>
+        <span class="announcement-item"><span>// 240GSM JAPANESE COMBED COTTON</span> &nbsp;—&nbsp; HEAVYWEIGHT OVERSIZED CUT</span>
+        <!-- Duplicated for seamless loop -->
+        <span class="announcement-item"><span>// DROP_04 IS LIVE</span> &nbsp;—&nbsp; LIMITED RUN OF 50 PIECES PER SILHOUETTE</span>
+        <span class="announcement-item"><span>// FREE WORLDWIDE EXPRESS</span> ON ORDERS OVER <span class="currency-thresh">$100 AUD</span></span>
+        <span class="announcement-item"><span>// NO RESTOCKS. EVER.</span> ONCE AN ARC SELLS OUT, IT IS ARCHIVED TO THE VAULT</span>
+        <span class="announcement-item"><span>// 240GSM JAPANESE COMBED COTTON</span> &nbsp;—&nbsp; HEAVYWEIGHT OVERSIZED CUT</span>
+      </div>
+    </div>
+
+    <!-- MAIN NAVBAR -->
+    <nav class="main-nav" id="main-nav">
+      <div class="nav-left">
+        <a href="#hero" class="brand-logo" id="brand-logo">
+          <div class="logo-mark">
+            <span class="logo-kanji">改</span>
+            <span class="status-dot"></span>
+          </div>
+          <div class="logo-text-group">
+            <span class="logo-primary">KAIZEN</span>
+            <span class="logo-secondary">改善 // APPAREL</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="nav-center">
+        <ul class="nav-menu-list">
+          <li><a href="#hero" class="nav-link active">ORIGIN</a></li>
+          <li><a href="#drops-slider" class="nav-link">LATEST_DROPS</a></li>
+          <li><a href="#scroll-stack" class="nav-link">THE_VAULT</a></li>
+          <li><a href="#lookbook-arc" class="nav-link">ARC_LORE</a></li>
+          <li><a href="#specs" class="nav-link">CRAFT</a></li>
+        </ul>
+      </div>
+
+      <div class="nav-right">
+        <!-- CURRENCY SELECTOR -->
+        <div class="currency-dropdown">
+          <label for="currency-select" class="sr-only">Currency</label>
+          <select id="currency-select" class="currency-select" aria-label="Select Currency">
+            <option value="AUD" selected>AUD $</option>
+            <option value="USD">USD $</option>
+            <option value="EUR">EUR €</option>
+            <option value="JPY">JPY ¥</option>
+            <option value="GBP">GBP £</option>
+          </select>
+        </div>
+
+        <!-- CART BUTTON -->
+        <button id="open-cart-btn" class="nav-cart-btn" aria-label="Open Shopping Bag">
+          <span class="cart-icon-wrap">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m2 2 2.4 12h13.2l2.4-9.6H6.4"/>
+              <circle cx="9" cy="19" r="2"/>
+              <circle cx="17" cy="19" r="2"/>
+            </svg>
+            <span id="cart-badge-count" class="cart-badge-count">0</span>
+          </span>
+          <span class="cart-btn-label">BAG</span>
+        </button>
+
+        <!-- MOBILE MENU BUTTON -->
+        <button id="mobile-menu-toggle" class="mobile-menu-toggle" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MOBILE SLIDE-DOWN MENU -->
+  <div id="mobile-menu" class="mobile-menu">
+    <div class="mobile-menu-inner">
+      <ul class="mobile-nav-links">
+        <li><a href="#hero" class="mobile-nav-item"><span>01</span> ORIGIN</a></li>
+        <li><a href="#drops-slider" class="mobile-nav-item"><span>02</span> LATEST_DROPS</a></li>
+        <li><a href="#scroll-stack" class="mobile-nav-item"><span>03</span> THE_VAULT (STACK)</a></li>
+        <li><a href="#lookbook-arc" class="mobile-nav-item"><span>04</span> ARC_LORE</a></li>
+        <li><a href="#specs" class="mobile-nav-item"><span>05</span> CRAFT & SPECS</a></li>
+      </ul>
+      <div class="mobile-menu-footer">
+        <p class="mono-meta">KAIZEN APPAREL // TOKYO & SYDNEY</p>
+        <p class="mono-meta">NO RESTOCKS. EVER.</p>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+
+    <!-- ========================================================================= -->
+    <!-- 1. HERO — CINEMATIC CHARACTER SHOWCASE (Generated Anime Streetwear)       -->
+    <!-- ========================================================================= -->
+    <!-- ========================================================================= -->
+    <!-- 1. HERO — REALISTIC 3D STAGE & WALKING HUMAN CANVAS SCROLL SEQUENCE       -->
+    <!-- ========================================================================= -->
+    <section id="hero" class="hero-stage-container" aria-label="KAIZEN Hero — Anime Streetwear">
+      <div class="hero-stage-sticky" id="hero-sticky">
+
+        <!-- 3D STAGE BACKGROUND ENVIRONMENT -->
+        <div class="hero-3d-stage" id="hero-3d-stage" aria-hidden="true">
+          <!-- 3D Perspective Ground Runway -->
+          <div class="hero-floor-perspective">
+            <div class="hero-floor-grid"></div>
+            <div class="hero-floor-runway"></div>
+            <div class="hero-floor-reflection"></div>
+          </div>
+
+          <!-- Volumetric Overhead Spotlight & Light Pillars -->
+          <div class="hero-light-beam"></div>
+          <div class="hero-light-pillar left-pillar"></div>
+          <div class="hero-light-pillar right-pillar"></div>
+
+          <!-- 3D Spatial Kanji Watermarks in Depth -->
+          <div class="hero-spatial-kanji kanji-left">改善</div>
+          <div class="hero-spatial-kanji kanji-right">武士道</div>
+
+          <!-- Floating Ambient Embers & Cyber Dust Particles in 3D -->
+          <div class="hero-spatial-particles">
+            <span class="sp-dot sp-1"></span>
+            <span class="sp-dot sp-2"></span>
+            <span class="sp-dot sp-3"></span>
+            <span class="sp-dot sp-4"></span>
+            <span class="sp-dot sp-5"></span>
+            <span class="sp-dot sp-6"></span>
+            <span class="sp-dot sp-7"></span>
+            <span class="sp-dot sp-8"></span>
+          </div>
+        </div>
+
+        <!-- CANVAS ELEMENT FOR SCROLL FRAME SCRUBBING (Real Human Walking in Drop Shoulder Tee) -->
+        <div class="hero-canvas-wrap" id="hero-canvas-wrap">
+          <canvas id="hero-canvas" class="hero-canvas" aria-label="Real Human Model Anime Streetwear Walking Sequence"></canvas>
+          <!-- Realistic Ground Shadow & Floor Reflection beneath walking model -->
+          <div class="hero-model-ground-shadow" aria-hidden="true"></div>
+        </div>
+
+        <!-- CINEMATIC CRT & FINISHING EXIT TRANSITION OVERLAYS -->
+        <div class="hero-crt-overlay" aria-hidden="true"></div>
+        <div class="hero-gradient-overlay" id="hero-gradient-overlay" aria-hidden="true"></div>
+        <div class="hero-exit-transition-overlay" id="hero-exit-overlay" aria-hidden="true"></div>
+
+        <!-- HUD METADATA LABELS -->
+        <div class="hero-hud-top-left">
+          <div class="hud-item"><span class="hud-pip"></span> SYS_ACTIVE // ARCHIVE_V4</div>
+          <div class="hud-item mono-dim">FPS: <span id="hud-fps">60</span> // 240GSM COTTON</div>
+          <div class="hud-item mono-dim">GRID: 35.6762°N 139.6503°E</div>
+        </div>
+
+        <div class="hero-hud-top-right">
+          <div class="hud-tag">LIMITED ARC // NO RESTOCK</div>
+          <div id="hero-frame-counter" class="mono-dim">FRAME: 00 / 39</div>
+          <div id="hero-scroll-pct" class="mono-dim">SCROLL: 00%</div>
+        </div>
+
+        <!-- STAGGERED REVEAL HERO COPY -->
+        <div class="hero-copy-wrapper" id="hero-copy">
+          <div class="hero-eyebrow">
+            <span class="eyebrow-accent">[ 改善 // DROP 04 ]</span>
+            <span class="eyebrow-text">JAPANESE ANIME STREETWEAR</span>
+          </div>
+
+          <h1 class="hero-main-title">
+            <span class="title-word title-stroke" data-char="K">K</span>
+            <span class="title-word" data-char="A">A</span>
+            <span class="title-word" data-char="I">I</span>
+            <span class="title-word" data-char="Z">Z</span>
+            <span class="title-word" data-char="E">E</span>
+            <span class="title-word" data-char="N">N</span>
+            <span class="title-kanji-watermark">改善</span>
+          </h1>
+
+          <p class="hero-subtext" id="hero-subtext">
+            Original shonen artwork tailored onto 240GSM heavyweight cotton. Built for those who wear design first. Once sold, never reprinted.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#drops-slider" class="btn btn-primary" id="hero-explore-btn">
+              <span>EXPLORE THE DROP</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+            </a>
+            <a href="#scroll-stack" class="btn btn-ghost" id="hero-vault-btn">
+              <span>VIEW VAULT STACK</span>
+              <span class="btn-kanji">書架</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- SCROLL INDICATOR -->
+        <div class="hero-scroll-indicator" id="hero-scroll-indicator">
+          <div class="scroll-mouse">
+            <div class="scroll-wheel"></div>
+          </div>
+          <span class="scroll-prompt">SCROLL TO STEP FORWARD</span>
+          <span id="hero-scrub-percent" class="mono-scrub">00%</span>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========================================================================= -->
+    <!-- 2. MARQUEE TICKER TAPE BANNER                                             -->
+    <!-- ========================================================================= -->
+    <div class="marquee-section" aria-hidden="true">
+      <div class="marquee-track marquee-track-left">
+        <div class="marquee-item">LIMITED RUN // NO RESTOCKS EVER <span class="accent-kanji">限界突破</span></div>
+        <div class="marquee-item">•</div>
+        <div class="marquee-item">240GSM HEAVYWEIGHT COMBED COTTON <span class="accent-kanji">武士道</span></div>
+        <div class="marquee-item">•</div>
+        <div class="marquee-item">DISPATCHED DIRECTLY FROM SYDNEY & TOKYO <span class="accent-kanji">神風</span></div>
+        <div class="marquee-item">•</div>
+        <div class="marquee-item">SCREENPRINTED GRAPHICS WITH HIGH DENSITY INK <span class="accent-kanji">鬼血</span></div>
+        <div class="marquee-item">•</div>
+        <!-- Loop duplicate -->
+        <div class="marquee-item">LIMITED RUN // NO RESTOCKS EVER <span class="accent-kanji">限界突破</span></div>
+        <div class="marquee-item">•</div>
+        <div class="marquee-item">240GSM HEAVYWEIGHT COMBED COTTON <span class="accent-kanji">武士道</span></div>
+        <div class="marquee-item">•</div>
+        <div class="marquee-item">DISPATCHED DIRECTLY FROM SYDNEY & TOKYO <span class="accent-kanji">神風</span></div>
+        <div class="marquee-item">•</div>
+        <div class="marquee-item">SCREENPRINTED GRAPHICS WITH HIGH DENSITY INK <span class="accent-kanji">鬼血</span></div>
+        <div class="marquee-item">•</div>
+      </div>
+    </div>
+
+    <!-- ========================================================================= -->
+    <!-- 2.5. THE ORIGIN — SCROLL-DRIVEN WORD REVEAL SECTION                      -->
+    <!-- ========================================================================= -->
+    <section id="drop-reveal" class="drop-reveal-section" aria-label="Origin Collection Reveal">
+
+      <!-- TALL SCROLL TRACK: 350vh lets the sticky panel animate through 2 phases -->
+      <div class="drop-reveal-track">
+
+        <!-- STICKY CONTAINER: stays in place while parent scrolls -->
+        <div class="drop-reveal-sticky" id="drop-reveal-sticky">
+
+          <!-- BACKGROUND PRODUCT IMAGE (fades in during Phase 2 as words split) -->
+          <div class="drop-reveal-bg" id="drop-reveal-bg">
+            <img
+              src="/assets/products/warrior-5.webp"
+              alt="KAIZEN Origin Collection — Warrior Spirit Heavyweight Tee"
+              class="drop-reveal-bg-img"
+              id="drop-reveal-bg-img"
+              loading="lazy"
+            >
+            <!-- Image dim overlay -->
+            <div class="drop-reveal-bg-overlay"></div>
+
+            <!-- PRODUCT DETAIL LABEL: floats in when image reveals -->
+            <div class="drop-reveal-product-label" id="drop-reveal-product-label">
+              <div class="drl-top">
+                <span class="drl-arc">ARC_01 // WARRIOR SPIRIT</span>
+                <span class="drl-kanji">戦士の精神</span>
+              </div>
+              <div class="drl-price">$33.99 AUD <span class="drl-was">was $39.99</span></div>
+              <div class="drl-tags">
+                <span class="drl-tag">240GSM</span>
+                <span class="drl-tag">LIMITED 50 PCS</span>
+                <span class="drl-tag">NO RESTOCK</span>
+              </div>
+              <a href="#drops-slider" class="drl-cta-btn">
+                VIEW THE FULL DROP
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- CRT / GRAIN OVERLAY -->
+          <div class="drop-reveal-crt" aria-hidden="true"></div>
+
+          <!-- CORNER LABEL: "THE DROP // ORIGIN COLLECTION" -->
+          <div class="drop-reveal-corner-label" aria-hidden="true">
+            <span class="dcl-red">THE DROP</span>
+            <span class="dcl-slash"> // </span>
+            <span class="dcl-grey">ORIGIN COLLECTION</span>
+          </div>
+
+          <!-- BOTTOM-RIGHT PROGRESS INDICATOR -->
+          <div class="drop-reveal-progress-label" aria-hidden="true">
+            <span class="mono-dim">SCROLL PROGRESS:</span>
+            <span id="drop-reveal-pct" class="drp-pct">00%</span>
+            <div class="drp-bar-track">
+              <div id="drop-reveal-bar" class="drp-bar"></div>
+            </div>
+          </div>
+
+          <!-- THE TWO GIANT STACKED WORDS -->
+          <div class="drop-reveal-words" id="drop-reveal-words" aria-label="THE ORIGIN — Drop 04 Origin Collection">
+
+            <!-- Word 1: "THE" — flies UP and LEFT in Phase 2 -->
+            <span class="drw drw-the" id="drw-the" aria-hidden="true">THE</span>
+
+            <!-- Word 2: "ORIGIN" — flies DOWN and RIGHT in Phase 2 -->
+            <span class="drw drw-origin" id="drw-origin" aria-hidden="true">ORIGIN</span>
+
+          </div>
+
+          <!-- DECORATIVE VERTICAL RULES -->
+          <div class="drop-reveal-rules" aria-hidden="true">
+            <div class="drr drr-left"></div>
+            <div class="drr drr-right"></div>
+          </div>
+
+        </div><!-- end sticky -->
+
+      </div><!-- end track -->
+
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 3. KINETIC HORIZONTAL PRODUCT SLIDER ("slider scroll imge change")         -->
+    <!-- ========================================================================= -->
+    <section id="drops-slider" class="slider-section">
+      <div class="section-container">
+        
+        <!-- SECTION HEADER -->
+        <div class="section-header-split">
+          <div class="header-left">
+            <div class="section-tag">// ARCHIVE CATALOG 2025</div>
+            <h2 class="section-title">LATEST_DROPS <span class="section-count">[08]</span></h2>
+            <p class="section-desc">Drag or scroll horizontally. Hover over any card to reveal the back print & model editorial.</p>
+          </div>
+
+          <div class="header-right">
+            <!-- CATEGORY FILTER TABS -->
+            <div class="filter-tabs" id="filter-tabs" role="tablist">
+              <button class="filter-tab active" data-filter="all">ALL [08]</button>
+              <button class="filter-tab" data-filter="tees">TEES [05]</button>
+              <button class="filter-tab" data-filter="hoodies">LIMITED [03]</button>
+            </div>
+
+            <!-- SLIDER NAVIGATION CONTROLS -->
+            <div class="slider-arrows">
+              <button id="slider-prev-btn" class="slider-nav-btn" aria-label="Previous Slide">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <button id="slider-next-btn" class="slider-nav-btn" aria-label="Next Slide">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLIDER PROGRESS BAR -->
+        <div class="slider-progress-track">
+          <div id="slider-progress-bar" class="slider-progress-bar"></div>
+        </div>
+
+        <!-- HORIZONTAL DRAGGABLE CAROUSEL CONTAINER -->
+        <div class="slider-viewport" id="slider-viewport">
+          <div class="slider-track" id="slider-track">
+
+            <!-- PRODUCT 1: WARRIOR SPIRIT -->
+            <article class="product-card" data-category="tees" data-id="warrior-spirit" data-price-aud="39.99" data-name="WARRIOR SPIRIT TEE">
+              <div class="card-media-wrapper">
+                <!-- DUAL IMAGE SWAP: MODEL LOOKBOOK <-> ARTWORK PRINT -->
+                <img src="/assets/products/warrior-2.webp" alt="Warrior Spirit Tee on Model" class="card-img img-primary" loading="lazy">
+                <img src="/assets/products/warrior-1.webp" alt="Warrior Spirit Graphic Print" class="card-img img-secondary" loading="lazy">
+                
+                <div class="card-badge-top">
+                  <span class="badge-tag badge-sale">SALE 15% OFF</span>
+                  <span class="badge-tag badge-stock">ONLY 6 LEFT</span>
+                </div>
+
+                <!-- IMAGE SWAP HINT PILL -->
+                <div class="image-swap-hint">
+                  <span class="hint-icon">⇄</span>
+                  <span class="hint-text">HOVER / TAP FLIP</span>
+                </div>
+
+                <!-- QUICK ACTIONS ON CARD -->
+                <div class="card-overlay-actions">
+                  <button class="quick-view-btn" data-product="warrior-spirit">QUICK VIEW</button>
+                  <button class="quick-add-btn" data-product="warrior-spirit">+ QUICK ADD</button>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="card-header-row">
+                  <span class="card-id mono-dim">ARC_01 // BUSHIDO</span>
+                  <span class="card-kanji">戦士の精神</span>
+                </div>
+                <h3 class="card-title">WARRIOR SPIRIT TEE</h3>
+                <div class="card-price-row">
+                  <span class="price-current" data-aud="33.99">$33.99 AUD</span>
+                  <span class="price-original" data-aud="39.99">$39.99 AUD</span>
+                  <span class="price-tag">240GSM</span>
+                </div>
+                <div class="size-pill-selector" data-product="warrior-spirit">
+                  <span class="size-pill" data-size="S">S</span>
+                  <span class="size-pill active" data-size="M">M</span>
+                  <span class="size-pill" data-size="L">L</span>
+                  <span class="size-pill" data-size="XL">XL</span>
+                  <span class="size-pill disabled" data-size="XXL">XXL</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PRODUCT 2: BLUE FLAME -->
+            <article class="product-card" data-category="tees" data-id="blue-flame" data-price-aud="39.99" data-name="BLUE FLAME TEE">
+              <div class="card-media-wrapper">
+                <img src="/assets/products/blue-flame-2.webp" alt="Blue Flame Tee on Model" class="card-img img-primary" loading="lazy">
+                <img src="/assets/products/blue-flame-1.webp" alt="Blue Flame Graphic Print" class="card-img img-secondary" loading="lazy">
+                
+                <div class="card-badge-top">
+                  <span class="badge-tag badge-sale">SALE 15% OFF</span>
+                  <span class="badge-tag badge-hot">POPULAR</span>
+                </div>
+
+                <div class="image-swap-hint">
+                  <span class="hint-icon">⇄</span>
+                  <span class="hint-text">HOVER / TAP FLIP</span>
+                </div>
+
+                <div class="card-overlay-actions">
+                  <button class="quick-view-btn" data-product="blue-flame">QUICK VIEW</button>
+                  <button class="quick-add-btn" data-product="blue-flame">+ QUICK ADD</button>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="card-header-row">
+                  <span class="card-id mono-dim">ARC_02 // AZURE</span>
+                  <span class="card-kanji">青い炎</span>
+                </div>
+                <h3 class="card-title">BLUE FLAME TEE</h3>
+                <div class="card-price-row">
+                  <span class="price-current" data-aud="33.99">$33.99 AUD</span>
+                  <span class="price-original" data-aud="39.99">$39.99 AUD</span>
+                  <span class="price-tag">240GSM</span>
+                </div>
+                <div class="size-pill-selector" data-product="blue-flame">
+                  <span class="size-pill" data-size="S">S</span>
+                  <span class="size-pill" data-size="M">M</span>
+                  <span class="size-pill active" data-size="L">L</span>
+                  <span class="size-pill" data-size="XL">XL</span>
+                  <span class="size-pill" data-size="XXL">XXL</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PRODUCT 3: DEMON BLOOD -->
+            <article class="product-card" data-category="tees" data-id="demon-blood" data-price-aud="39.99" data-name="DEMON BLOOD TEE">
+              <div class="card-media-wrapper">
+                <img src="/assets/products/demon-blood-2.webp" alt="Demon Blood Tee on Model" class="card-img img-primary" loading="lazy">
+                <img src="/assets/products/demon-blood-1.webp" alt="Demon Blood Graphic Print" class="card-img img-secondary" loading="lazy">
+                
+                <div class="card-badge-top">
+                  <span class="badge-tag badge-sale">SALE 15% OFF</span>
+                  <span class="badge-tag badge-stock">FEW LEFT</span>
+                </div>
+
+                <div class="image-swap-hint">
+                  <span class="hint-icon">⇄</span>
+                  <span class="hint-text">HOVER / TAP FLIP</span>
+                </div>
+
+                <div class="card-overlay-actions">
+                  <button class="quick-view-btn" data-product="demon-blood">QUICK VIEW</button>
+                  <button class="quick-add-btn" data-product="demon-blood">+ QUICK ADD</button>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="card-header-row">
+                  <span class="card-id mono-dim">ARC_03 // ONI</span>
+                  <span class="card-kanji">鬼の血</span>
+                </div>
+                <h3 class="card-title">DEMON BLOOD TEE</h3>
+                <div class="card-price-row">
+                  <span class="price-current" data-aud="33.99">$33.99 AUD</span>
+                  <span class="price-original" data-aud="39.99">$39.99 AUD</span>
+                  <span class="price-tag">240GSM</span>
+                </div>
+                <div class="size-pill-selector" data-product="demon-blood">
+                  <span class="size-pill" data-size="S">S</span>
+                  <span class="size-pill active" data-size="M">M</span>
+                  <span class="size-pill" data-size="L">L</span>
+                  <span class="size-pill" data-size="XL">XL</span>
+                  <span class="size-pill" data-size="XXL">XXL</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PRODUCT 4: DOMAIN EXPANSION -->
+            <article class="product-card" data-category="hoodies" data-id="domain-expansion" data-price-aud="39.99" data-name="DOMAIN EXPANSION TEE">
+              <div class="card-media-wrapper">
+                <img src="/assets/products/domain-2.webp" alt="Domain Expansion Tee Model" class="card-img img-primary" loading="lazy">
+                <img src="/assets/products/domain-1.webp" alt="Domain Expansion Graphic Artwork" class="card-img img-secondary" loading="lazy">
+                
+                <div class="card-badge-top">
+                  <span class="badge-tag badge-exclusive">LIMITED DROP</span>
+                </div>
+
+                <div class="image-swap-hint">
+                  <span class="hint-icon">⇄</span>
+                  <span class="hint-text">HOVER / TAP FLIP</span>
+                </div>
+
+                <div class="card-overlay-actions">
+                  <button class="quick-view-btn" data-product="domain-expansion">QUICK VIEW</button>
+                  <button class="quick-add-btn" data-product="domain-expansion">+ QUICK ADD</button>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="card-header-row">
+                  <span class="card-id mono-dim">ARC_04 // VOID</span>
+                  <span class="card-kanji">領域展開</span>
+                </div>
+                <h3 class="card-title">DOMAIN EXPANSION TEE</h3>
+                <div class="card-price-row">
+                  <span class="price-current" data-aud="39.99">$39.99 AUD</span>
+                  <span class="price-tag">240GSM</span>
+                </div>
+                <div class="size-pill-selector" data-product="domain-expansion">
+                  <span class="size-pill active" data-size="S">S</span>
+                  <span class="size-pill" data-size="M">M</span>
+                  <span class="size-pill" data-size="L">L</span>
+                  <span class="size-pill" data-size="XL">XL</span>
+                  <span class="size-pill" data-size="XXL">XXL</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PRODUCT 5: WATER BREATHING -->
+            <article class="product-card" data-category="tees" data-id="water-breathing" data-price-aud="39.99" data-name="WATER BREATHING TEE">
+              <div class="card-media-wrapper">
+                <img src="/assets/products/water-model.webp" alt="Water Breathing Tee Model" class="card-img img-primary" loading="lazy">
+                <img src="/assets/products/water-1.webp" alt="Water Breathing Artwork" class="card-img img-secondary" loading="lazy">
+                
+                <div class="card-badge-top">
+                  <span class="badge-tag badge-tag-cyan">SHONEN RUN</span>
+                </div>
+
+                <div class="image-swap-hint">
+                  <span class="hint-icon">⇄</span>
+                  <span class="hint-text">HOVER / TAP FLIP</span>
+                </div>
+
+                <div class="card-overlay-actions">
+                  <button class="quick-view-btn" data-product="water-breathing">QUICK VIEW</button>
+                  <button class="quick-add-btn" data-product="water-breathing">+ QUICK ADD</button>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="card-header-row">
+                  <span class="card-id mono-dim">ARC_05 // TIDE</span>
+                  <span class="card-kanji">水の呼吸</span>
+                </div>
+                <h3 class="card-title">WATER BREATHING TEE</h3>
+                <div class="card-price-row">
+                  <span class="price-current" data-aud="39.99">$39.99 AUD</span>
+                  <span class="price-tag">240GSM</span>
+                </div>
+                <div class="size-pill-selector" data-product="water-breathing">
+                  <span class="size-pill" data-size="S">S</span>
+                  <span class="size-pill active" data-size="M">M</span>
+                  <span class="size-pill" data-size="L">L</span>
+                  <span class="size-pill" data-size="XL">XL</span>
+                  <span class="size-pill" data-size="XXL">XXL</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PRODUCT 6: WILL OF THE SUN -->
+            <article class="product-card" data-category="hoodies" data-id="will-of-the-sun" data-price-aud="39.99" data-name="WILL OF THE SUN TEE">
+              <div class="card-media-wrapper">
+                <img src="/assets/products/sun-4.webp" alt="Will of the Sun Model" class="card-img img-primary" loading="lazy">
+                <img src="/assets/products/sun-1.webp" alt="Will of the Sun Graphic" class="card-img img-secondary" loading="lazy">
+                
+                <div class="card-badge-top">
+                  <span class="badge-tag badge-sale">SALE 15% OFF</span>
+                  <span class="badge-tag badge-gold">GOLD FOIL</span>
+                </div>
+
+                <div class="image-swap-hint">
+                  <span class="hint-icon">⇄</span>
+                  <span class="hint-text">HOVER / TAP FLIP</span>
+                </div>
+
+                <div class="card-overlay-actions">
+                  <button class="quick-view-btn" data-product="will-of-the-sun">QUICK VIEW</button>
+                  <button class="quick-add-btn" data-product="will-of-the-sun">+ QUICK ADD</button>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="card-header-row">
+                  <span class="card-id mono-dim">ARC_06 // SOLAR</span>
+                  <span class="card-kanji">日の意志</span>
+                </div>
+                <h3 class="card-title">WILL OF THE SUN TEE</h3>
+                <div class="card-price-row">
+                  <span class="price-current" data-aud="33.99">$33.99 AUD</span>
+                  <span class="price-original" data-aud="39.99">$39.99 AUD</span>
+                  <span class="price-tag">240GSM</span>
+                </div>
+                <div class="size-pill-selector" data-product="will-of-the-sun">
+                  <span class="size-pill" data-size="S">S</span>
+                  <span class="size-pill" data-size="M">M</span>
+                  <span class="size-pill" data-size="L">L</span>
+                  <span class="size-pill active" data-size="XL">XL</span>
+                  <span class="size-pill" data-size="XXL">XXL</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PRODUCT 7: LIMITLESS -->
+            <article class="product-card" data-category="hoodies" data-id="limitless" data-price-aud="39.99" data-name="LIMITLESS TEE">
+              <div class="card-media-wrapper">
+                <img src="/assets/products/limitless-2.webp" alt="Limitless Tee Model" class="card-img img-primary" loading="lazy">
+                <img src="/assets/products/limitless-1.webp" alt="Limitless Graphic" class="card-img img-secondary" loading="lazy">
+                
+                <div class="card-badge-top">
+                  <span class="badge-tag badge-exclusive">SPECIAL CUT</span>
+                </div>
+
+                <div class="image-swap-hint">
+                  <span class="hint-icon">⇄</span>
+                  <span class="hint-text">HOVER / TAP FLIP</span>
+                </div>
+
+                <div class="card-overlay-actions">
+                  <button class="quick-view-btn" data-product="limitless">QUICK VIEW</button>
+                  <button class="quick-add-btn" data-product="limitless">+ QUICK ADD</button>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="card-header-row">
+                  <span class="card-id mono-dim">ARC_07 // INFINITY</span>
+                  <span class="card-kanji">無下限</span>
+                </div>
+                <h3 class="card-title">LIMITLESS TEE</h3>
+                <div class="card-price-row">
+                  <span class="price-current" data-aud="39.99">$39.99 AUD</span>
+                  <span class="price-tag">240GSM</span>
+                </div>
+                <div class="size-pill-selector" data-product="limitless">
+                  <span class="size-pill" data-size="S">S</span>
+                  <span class="size-pill" data-size="M">M</span>
+                  <span class="size-pill active" data-size="L">L</span>
+                  <span class="size-pill" data-size="XL">XL</span>
+                  <span class="size-pill" data-size="XXL">XXL</span>
+                </div>
+              </div>
+            </article>
+
+            <!-- PRODUCT 8: BUSHIDO -->
+            <article class="product-card" data-category="tees" data-id="bushido" data-price-aud="39.99" data-name="BUSHIDO TEE">
+              <div class="card-media-wrapper">
+                <img src="/assets/products/bushido-2.webp" alt="Bushido Tee Model" class="card-img img-primary" loading="lazy">
+                <img src="/assets/products/bushido-1.webp" alt="Bushido Graphic Artwork" class="card-img img-secondary" loading="lazy">
+                
+                <div class="card-badge-top">
+                  <span class="badge-tag badge-exclusive">SIGNATURE</span>
+                </div>
+
+                <div class="image-swap-hint">
+                  <span class="hint-icon">⇄</span>
+                  <span class="hint-text">HOVER / TAP FLIP</span>
+                </div>
+
+                <div class="card-overlay-actions">
+                  <button class="quick-view-btn" data-product="bushido">QUICK VIEW</button>
+                  <button class="quick-add-btn" data-product="bushido">+ QUICK ADD</button>
+                </div>
+              </div>
+
+              <div class="card-info">
+                <div class="card-header-row">
+                  <span class="card-id mono-dim">ARC_08 // KATANA</span>
+                  <span class="card-kanji">武士道</span>
+                </div>
+                <h3 class="card-title">BUSHIDO TEE</h3>
+                <div class="card-price-row">
+                  <span class="price-current" data-aud="39.99">$39.99 AUD</span>
+                  <span class="price-tag">240GSM</span>
+                </div>
+                <div class="size-pill-selector" data-product="bushido">
+                  <span class="size-pill" data-size="S">S</span>
+                  <span class="size-pill active" data-size="M">M</span>
+                  <span class="size-pill" data-size="L">L</span>
+                  <span class="size-pill" data-size="XL">XL</span>
+                  <span class="size-pill" data-size="XXL">XXL</span>
+                </div>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 3.5 CRAFT // 240GSM — DUAL PANEL HORIZONTAL SPLIT REVEAL                 -->
+    <!-- ========================================================================= -->
+    <section id="craft-reveal" class="craft-reveal-section" aria-label="Craft and 240GSM Materials Reveal">
+      <div class="craft-reveal-track">
+        <div class="craft-reveal-sticky" id="craft-reveal-sticky">
+
+          <!-- CORNER LABEL -->
+          <div class="craft-corner-label" aria-hidden="true">
+            <span class="ccl-tag">THE FABRIC</span>
+            <span class="ccl-slash"> // </span>
+            <span class="ccl-desc">MATERIAL SCIENCE</span>
+          </div>
+
+          <!-- BOTTOM-RIGHT PROGRESS -->
+          <div class="craft-progress-wrap" aria-hidden="true">
+            <span id="craft-pct" class="craft-pct">00%</span>
+            <div class="craft-progress-track">
+              <div id="craft-progress-bar" class="craft-progress-bar"></div>
+            </div>
+          </div>
+
+          <!-- LEFT PANEL: "CRAFT" slides to the left as you scroll -->
+          <div class="craft-panel craft-panel-left" id="craft-panel-left">
+            <div class="craft-panel-inner">
+              <span class="craft-word" aria-hidden="true">CRAFT</span>
+              <div class="craft-panel-decor">
+                <div class="cpd-line"></div>
+                <div class="cpd-sub">HANDMADE IN TOKYO</div>
+                <div class="cpd-sub">ZERO COMPROMISES</div>
+                <div class="cpd-line"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RIGHT PANEL: "240GSM" slides to the right -->
+          <div class="craft-panel craft-panel-right" id="craft-panel-right">
+            <div class="craft-panel-inner">
+              <span class="craft-word craft-word-outline" aria-hidden="true">240GSM</span>
+              <div class="craft-panel-decor craft-panel-decor-right">
+                <div class="cpd-line"></div>
+                <div class="cpd-sub">COMBED COTTON</div>
+                <div class="cpd-sub">GARMENT WASHED</div>
+                <div class="cpd-line"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CENTER REVEAL: product image + spec table fades in -->
+          <div class="craft-center-reveal" id="craft-center-reveal">
+            <div class="craft-center-img-wrap">
+              <img src="/assets/products/demon-blood-4.webp" alt="240GSM Heavyweight Cotton Detail" class="craft-center-img" loading="lazy">
+              <div class="craft-center-img-overlay"></div>
+            </div>
+            <div class="craft-center-specs">
+              <div class="ccs-row"><span class="ccs-label">FABRIC</span><span class="ccs-val">100% Ring-Spun Combed Cotton</span></div>
+              <div class="ccs-row"><span class="ccs-label">WEIGHT</span><span class="ccs-val">240 GSM Heavyweight Jersey</span></div>
+              <div class="ccs-row"><span class="ccs-label">FINISH</span><span class="ccs-val">Enzyme Garment Washed</span></div>
+              <div class="ccs-row"><span class="ccs-label">PRINT</span><span class="ccs-val">High-Density Discharge Screenprint</span></div>
+              <div class="ccs-row"><span class="ccs-label">BATCH</span><span class="ccs-val">50 Units Max / Arc — No Restock</span></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 4. ZENJI-INSPIRED PINNED CARD STACK ("scroll imge change")                -->
+    <!-- ========================================================================= -->
+    <section id="scroll-stack" class="scroll-stack-section">
+      <div class="section-container">
+        
+        <div class="stack-intro">
+          <div class="stack-badge">// PINNED SILHOUETTES</div>
+          <h2 class="stack-headline">THE_VAULT <span class="headline-red">[STACK DECK]</span></h2>
+          <p class="stack-sub">As you scroll down, each oversized heavyweight card locks into position, scaling down and stacking beneath the next piece.</p>
+        </div>
+
+        <!-- THE PINNED STACK DECK WRAPPER -->
+        <div class="scroll-stack-deck" id="scroll-stack-deck">
+
+          <!-- STACK CARD 1 -->
+          <div class="stack-card-slot" data-index="0">
+            <article class="stack-card stack-card-1">
+              <div class="stack-card-inner">
+                <div class="stack-card-left">
+                  <div class="stack-meta-top">
+                    <span class="stack-id-pill">DECK_01 // CRIMSON</span>
+                    <span class="stack-kanji-big">戦士</span>
+                  </div>
+                  <h3 class="stack-title">WARRIOR SPIRIT SILHOUETTE</h3>
+                  <p class="stack-story">
+                    Inspired by traditional rōnin code, modern cyberpunk combat discipline, and oversized skate silhouettes. Screenprinted on 240GSM combed cotton, enzyme garment washed to ensure deep pigment and indestructible collar ribbing.
+                  </p>
+                  <div class="stack-specs-list">
+                    <div class="spec-row"><span class="spec-label">CUT:</span><span class="spec-val">Boxy Drop Shoulder</span></div>
+                    <div class="spec-row"><span class="spec-label">GSM:</span><span class="spec-val">240GSM Heavy Cotton</span></div>
+                    <div class="spec-row"><span class="spec-label">PRINT:</span><span class="spec-val">Discharge High-Density</span></div>
+                    <div class="spec-row"><span class="spec-label">BATCH:</span><span class="spec-val">50 Units World-Wide</span></div>
+                  </div>
+                  <div class="stack-action-row">
+                    <button class="btn btn-primary stack-add-btn" data-product="warrior-spirit">
+                      <span>CLAIM PIECE ($33.99 AUD)</span>
+                    </button>
+                    <button class="btn btn-outline quick-view-btn" data-product="warrior-spirit">
+                      <span>SPECS</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="stack-card-right">
+                  <div class="stack-img-wrap">
+                    <img src="/assets/products/warrior-5.webp" alt="Warrior Spirit Heavyweight Stack" class="stack-img" loading="lazy">
+                    <div class="stack-tag-corner">ARC 01 // SOLD 88%</div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- STACK CARD 2 -->
+          <div class="stack-card-slot" data-index="1">
+            <article class="stack-card stack-card-2">
+              <div class="stack-card-inner">
+                <div class="stack-card-left">
+                  <div class="stack-meta-top">
+                    <span class="stack-id-pill">DECK_02 // COBALT</span>
+                    <span class="stack-kanji-big">炎</span>
+                  </div>
+                  <h3 class="stack-title">BLUE FLAME OVERSIZED</h3>
+                  <p class="stack-story">
+                    Cursed azure hellfire aesthetics. The flame art spans across the spine and upper chest with dual-layer silkscreen ink that won't crack after repeated washes. Cut with a substantial neck rib that stays taut forever.
+                  </p>
+                  <div class="stack-specs-list">
+                    <div class="spec-row"><span class="spec-label">CUT:</span><span class="spec-val">Oversized Streetwear</span></div>
+                    <div class="spec-row"><span class="spec-label">GSM:</span><span class="spec-val">240GSM Heavy Cotton</span></div>
+                    <div class="spec-row"><span class="spec-label">PRINT:</span><span class="spec-val">Azure Screenprint</span></div>
+                    <div class="spec-row"><span class="spec-label">BATCH:</span><span class="spec-val">Archived Once Sold</span></div>
+                  </div>
+                  <div class="stack-action-row">
+                    <button class="btn btn-primary stack-add-btn" data-product="blue-flame">
+                      <span>CLAIM PIECE ($33.99 AUD)</span>
+                    </button>
+                    <button class="btn btn-outline quick-view-btn" data-product="blue-flame">
+                      <span>SPECS</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="stack-card-right">
+                  <div class="stack-img-wrap">
+                    <img src="/assets/products/blue-flame-4.webp" alt="Blue Flame Heavyweight Stack" class="stack-img" loading="lazy">
+                    <div class="stack-tag-corner">ARC 02 // RESTOCK NEVER</div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- STACK CARD 3 -->
+          <div class="stack-card-slot" data-index="2">
+            <article class="stack-card stack-card-3">
+              <div class="stack-card-inner">
+                <div class="stack-card-left">
+                  <div class="stack-meta-top">
+                    <span class="stack-id-pill">DECK_03 // BLOOD</span>
+                    <span class="stack-kanji-big">鬼</span>
+                  </div>
+                  <h3 class="stack-title">DEMON BLOOD HEAVYWEIGHT</h3>
+                  <p class="stack-story">
+                    Distressed demonic kanji and fierce shonen combat references. Built with pre-shrunk heavyweight fabric so your silhouette remains boxy and crisp even after countless cycles in the laundry.
+                  </p>
+                  <div class="stack-specs-list">
+                    <div class="spec-row"><span class="spec-label">CUT:</span><span class="spec-val">Structured Drop Shoulder</span></div>
+                    <div class="spec-row"><span class="spec-label">GSM:</span><span class="spec-val">240GSM 100% Cotton</span></div>
+                    <div class="spec-row"><span class="spec-label">PRINT:</span><span class="spec-val">Distressed Blood Red</span></div>
+                    <div class="spec-row"><span class="spec-label">BATCH:</span><span class="spec-val">Limited 50 Pieces</span></div>
+                  </div>
+                  <div class="stack-action-row">
+                    <button class="btn btn-primary stack-add-btn" data-product="demon-blood">
+                      <span>CLAIM PIECE ($33.99 AUD)</span>
+                    </button>
+                    <button class="btn btn-outline quick-view-btn" data-product="demon-blood">
+                      <span>SPECS</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="stack-card-right">
+                  <div class="stack-img-wrap">
+                    <img src="/assets/products/demon-blood-4.webp" alt="Demon Blood Heavyweight Stack" class="stack-img" loading="lazy">
+                    <div class="stack-tag-corner">ARC 03 // RUN ALMOST GONE</div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- STACK CARD 4 -->
+          <div class="stack-card-slot" data-index="3">
+            <article class="stack-card stack-card-4">
+              <div class="stack-card-inner">
+                <div class="stack-card-left">
+                  <div class="stack-meta-top">
+                    <span class="stack-id-pill">DECK_04 // SOLAR</span>
+                    <span class="stack-kanji-big">太陽</span>
+                  </div>
+                  <h3 class="stack-title">WILL OF THE SUN TEE</h3>
+                  <p class="stack-story">
+                    Sun breathing technique rendered in blazing solar gradients and gold leaf accents. High-contrast typography that reads as architectural fashion first, otaku shonen lore second.
+                  </p>
+                  <div class="stack-specs-list">
+                    <div class="spec-row"><span class="spec-label">CUT:</span><span class="spec-val">Heavyweight Box Cut</span></div>
+                    <div class="spec-row"><span class="spec-label">GSM:</span><span class="spec-val">240GSM Combed Cotton</span></div>
+                    <div class="spec-row"><span class="spec-label">PRINT:</span><span class="spec-val">Solar Gradient & Foil</span></div>
+                    <div class="spec-row"><span class="spec-label">BATCH:</span><span class="spec-val">Vault Final Drop</span></div>
+                  </div>
+                  <div class="stack-action-row">
+                    <button class="btn btn-primary stack-add-btn" data-product="will-of-the-sun">
+                      <span>CLAIM PIECE ($33.99 AUD)</span>
+                    </button>
+                    <button class="btn btn-outline quick-view-btn" data-product="will-of-the-sun">
+                      <span>SPECS</span>
+                    </button>
+                  </div>
+                </div>
+                <div class="stack-card-right">
+                  <div class="stack-img-wrap">
+                    <img src="/assets/products/sun-4.webp" alt="Will of the Sun Heavyweight Stack" class="stack-img" loading="lazy">
+                    <div class="stack-tag-corner">ARC 04 // FINAL DROP</div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 4.5. THE ARC NEVER DIES — STAGGERED MANIFESTO SCROLL REVEAL               -->
+    <!-- ========================================================================= -->
+    <section id="manifesto" class="manifesto-section" aria-label="Kaizen Manifesto">
+      <div class="manifesto-track">
+        <div class="manifesto-sticky" id="manifesto-sticky">
+
+          <!-- Animated background layer (pulses red at midpoint) -->
+          <div class="manifesto-bg" id="manifesto-bg" aria-hidden="true"></div>
+
+          <!-- Horizontal scan line that sweeps down -->
+          <div class="manifesto-scan" id="manifesto-scan" aria-hidden="true"></div>
+
+          <!-- Corner Label -->
+          <div class="manifesto-corner-label" aria-hidden="true">// KAIZEN PHILOSOPHY // 改善</div>
+
+          <!-- Right edge scroll progress bar -->
+          <div class="manifesto-side-bar" aria-hidden="true">
+            <div id="manifesto-side-bar-fill" class="manifesto-side-bar-fill"></div>
+          </div>
+
+          <!-- All 6 manifesto lines -->
+          <div class="manifesto-lines-wrap" id="manifesto-lines-wrap">
+
+            <div class="mline" id="mline-0" data-threshold="0.06">
+              <span class="mline-text mline-from-left">NO RESTOCKS.</span>
+              <span class="mline-kanji">再入荷なし</span>
+            </div>
+
+            <div class="mline mline-alt" id="mline-1" data-threshold="0.20">
+              <span class="mline-kanji mline-kanji-left">永遠に</span>
+              <span class="mline-text mline-from-right">EVER.</span>
+            </div>
+
+            <div class="mline" id="mline-2" data-threshold="0.36">
+              <span class="mline-text mline-from-left mline-medium">ONCE AN ARC CLOSES —</span>
+            </div>
+
+            <div class="mline mline-alt" id="mline-3" data-threshold="0.50">
+              <span class="mline-text mline-from-right mline-medium">IT IS ARCHIVED TO THE VAULT.</span>
+            </div>
+
+            <div class="mline" id="mline-4" data-threshold="0.64">
+              <span class="mline-text mline-from-left mline-red">WEAR THE DESIGN.</span>
+            </div>
+
+            <div class="mline mline-alt" id="mline-5" data-threshold="0.80">
+              <span class="mline-text mline-from-right mline-outline">NOT THE TREND.</span>
+            </div>
+
+          </div>
+
+          <!-- Bottom CTA (appears at end) -->
+          <div class="manifesto-cta" id="manifesto-cta">
+            <a href="#drops-slider" class="manifesto-cta-btn">
+              CLAIM YOUR ARC
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14m-7-7 7 7-7 7"/></svg>
+            </a>
+            <span class="manifesto-cta-sub">LIMITED 50 PIECES // 240GSM // NO RESTOCKS</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 5. INTERACTIVE PINNED LOOKBOOK & LORE ARC EXPLORER                        -->
+    <!-- ========================================================================= -->
+    <section id="lookbook-arc" class="lore-section">
+      <div class="section-container">
+        
+        <div class="lore-grid">
+          
+          <!-- LEFT PINNED CONTROLLER -->
+          <div class="lore-sticky-panel">
+            <div class="lore-header">
+              <span class="lore-badge">// SHONEN PHILOSOPHY</span>
+              <h2 class="lore-title">WEAR THE ARC</h2>
+              <p class="lore-intro">
+                ZENJI & KAIZEN were founded by fans who grew up on late-night anime subs, tape trading, and iconic tournament arcs. We craft anime clothing that reads as bold graphic design first.
+              </p>
+            </div>
+
+            <!-- INTERACTIVE ARC SELECTOR -->
+            <div class="arc-selector" id="arc-selector">
+              <button class="arc-btn active" data-arc="0">
+                <span class="arc-number">01</span>
+                <span class="arc-name">SAMURAI DISCIPLINE</span>
+                <span class="arc-jp">武士</span>
+              </button>
+              <button class="arc-btn" data-arc="1">
+                <span class="arc-number">02</span>
+                <span class="arc-name">CURSED TECHNIQUES</span>
+                <span class="arc-jp">呪術</span>
+              </button>
+              <button class="arc-btn" data-arc="2">
+                <span class="arc-number">03</span>
+                <span class="arc-name">SOLAR ASCENSION</span>
+                <span class="arc-jp">日輪</span>
+              </button>
+              <button class="arc-btn" data-arc="3">
+                <span class="arc-number">04</span>
+                <span class="arc-name">VOID & INFINITY</span>
+                <span class="arc-jp">無限</span>
+              </button>
+            </div>
+
+            <div class="lore-footer-badge">
+              <span class="dot-green"></span>
+              <span>BATCH 04 VERIFIED // 100% HEAVYWEIGHT COMBED COTTON</span>
+            </div>
+          </div>
+
+          <!-- RIGHT DYNAMIC ARC DISPLAY -->
+          <div class="lore-display-panel" id="lore-display">
+            <div class="arc-content active" id="arc-content-0">
+              <div class="arc-image-frame">
+                <img src="/assets/products/warrior-2.webp" alt="Warrior Spirit Lookbook" class="arc-display-img">
+                <div class="arc-overlay-label">MODEL: 182CM / WEARING SIZE L / BOXY FIT</div>
+              </div>
+              <div class="arc-text-card">
+                <h3>ARC 01 // BUSHIDO & THE UNBROKEN BLADE</h3>
+                <p>
+                  Every drop starts as custom artwork from zero templates. Heavyweight 240gsm cotton gives our tees an architectural drape that doesn't cling or buckle. Made to survive con floors, late-night skate sessions, and everyday street life.
+                </p>
+                <div class="arc-tags">
+                  <span class="arc-tag">#HEAVYWEIGHT</span>
+                  <span class="arc-tag">#SCREENPRINT</span>
+                  <span class="arc-tag">#TOKYO_DESIGN</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="arc-content" id="arc-content-1">
+              <div class="arc-image-frame">
+                <img src="/assets/products/blue-flame-2.webp" alt="Blue Flame Lookbook" class="arc-display-img">
+                <div class="arc-overlay-label">MODEL: 175CM / WEARING SIZE M / OVERSIZED DRAPE</div>
+              </div>
+              <div class="arc-text-card">
+                <h3>ARC 02 // CURSED ENERGY & HELLFIRE</h3>
+                <p>
+                  Taking cues from modern sorcery shonen arcs, the Azure Flame series fuses cyberpunk typography with ancient cursed ink seals. Discharge inks absorb right into the cotton threads for a zero-hand feel that breathes cleanly.
+                </p>
+                <div class="arc-tags">
+                  <span class="arc-tag">#CURSED_SEAL</span>
+                  <span class="arc-tag">#AZURE_INK</span>
+                  <span class="arc-tag">#ZERO_RESTOCK</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="arc-content" id="arc-content-2">
+              <div class="arc-image-frame">
+                <img src="/assets/products/sun-4.webp" alt="Sun Breathing Lookbook" class="arc-display-img">
+                <div class="arc-overlay-label">MODEL: 185CM / WEARING SIZE XL / STREETWEAR CUT</div>
+              </div>
+              <div class="arc-text-card">
+                <h3>ARC 03 // THE FIRST BREATH & SOLAR WILL</h3>
+                <p>
+                  Echoing the genesis of breath techniques, the Will of the Sun silhouette utilizes metallic gold pigment mixed with heat-cured plastisol inks, resulting in rich reflective depth that shifts under golden hour lighting.
+                </p>
+                <div class="arc-tags">
+                  <span class="arc-tag">#SOLAR_BREATH</span>
+                  <span class="arc-tag">#METALLIC_GOLD</span>
+                  <span class="arc-tag">#ARCHIVE_PIECE</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="arc-content" id="arc-content-3">
+              <div class="arc-image-frame">
+                <img src="/assets/products/domain-2.webp" alt="Domain Expansion Lookbook" class="arc-display-img">
+                <div class="arc-overlay-label">MODEL: 180CM / WEARING SIZE L / DROP SHOULDER</div>
+              </div>
+              <div class="arc-text-card">
+                <h3>ARC 04 // INFINITE VOID & BOUNDLESS DOMAIN</h3>
+                <p>
+                  No limits, no compromise. 100% pre-washed ring-spun cotton yarn eliminates shrinkage. Double-needle stitch construction across hem and sleeves ensures your garment withstands the test of time.
+                </p>
+                <div class="arc-tags">
+                  <span class="arc-tag">#DOMAIN_EXPANSION</span>
+                  <span class="arc-tag">#PRE_WASHED</span>
+                  <span class="arc-tag">#LIMITLESS</span>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 5.5. ARCHIVE STATS — SCROLL-TRIGGERED NUMBER COUNTERS                     -->
+    <!-- ========================================================================= -->
+    <section id="archive-stats" class="stats-section" aria-label="Kaizen Archive Statistics">
+      <div class="section-container">
+
+        <div class="stats-eyebrow">
+          <span class="stats-tag">// ARCHIVE STATISTICS</span>
+          <div class="stats-eyebrow-line"></div>
+        </div>
+
+        <div class="stats-grid">
+
+          <div class="stat-block" data-target="240" data-duration="1600" id="stat-block-0">
+            <div class="stat-top-row">
+              <span class="stat-number" id="stat-gsm">000</span>
+              <span class="stat-unit">GSM</span>
+            </div>
+            <div class="stat-sep"></div>
+            <span class="stat-name">HEAVYWEIGHT COTTON</span>
+            <p class="stat-detail">Per square metre. Structured drape that outlasts every drop cycle without sagging.</p>
+            <div class="stat-bar-wrap"><div class="stat-bar" id="stat-bar-0"></div></div>
+          </div>
+
+          <div class="stat-block" data-target="50" data-duration="1200" id="stat-block-1">
+            <div class="stat-top-row">
+              <span class="stat-number" id="stat-pcs">00</span>
+              <span class="stat-unit">PCS</span>
+            </div>
+            <div class="stat-sep"></div>
+            <span class="stat-name">PIECES PER ARC</span>
+            <p class="stat-detail">Strict 50-unit ceiling per silhouette. No exceptions, no over-runs, no second chances.</p>
+            <div class="stat-bar-wrap"><div class="stat-bar" id="stat-bar-1"></div></div>
+          </div>
+
+          <div class="stat-block stat-block-red" data-target="0" data-duration="800" id="stat-block-2">
+            <div class="stat-top-row">
+              <span class="stat-number" id="stat-restocks">—</span>
+              <span class="stat-unit">×</span>
+            </div>
+            <div class="stat-sep"></div>
+            <span class="stat-name">ZERO RESTOCKS</span>
+            <p class="stat-detail">Once the arc archives, it stays archived. Your piece stays rare. Forever.</p>
+            <div class="stat-bar-wrap"><div class="stat-bar" id="stat-bar-2" style="width:0%"></div></div>
+          </div>
+
+          <div class="stat-block" data-target="24" data-duration="1000" id="stat-block-3">
+            <div class="stat-top-row">
+              <span class="stat-number" id="stat-hours">00</span>
+              <span class="stat-unit">HR</span>
+            </div>
+            <div class="stat-sep"></div>
+            <span class="stat-name">DISPATCH SPEED</span>
+            <p class="stat-detail">Packed and shipped from our Sydney & Tokyo hub within 24 hours of order confirmation.</p>
+            <div class="stat-bar-wrap"><div class="stat-bar" id="stat-bar-3"></div></div>
+          </div>
+
+        </div>
+
+        <!-- Decorative scrolling text rule -->
+        <div class="stats-bottom-rule" aria-hidden="true">
+          <div class="sbr-track">
+            <span>KAIZEN_APPAREL // ARCHIVE_V04 // NO_RESTOCKS_EVER // 改善_STUDIO // 240GSM_HEAVYWEIGHT // TOKYO_×_SYDNEY // </span>
+            <span>KAIZEN_APPAREL // ARCHIVE_V04 // NO_RESTOCKS_EVER // 改善_STUDIO // 240GSM_HEAVYWEIGHT // TOKYO_×_SYDNEY // </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 6. CRAFTSMANSHIP & TECHNICAL SPECIFICATIONS                               -->
+    <!-- ========================================================================= -->
+    <section id="specs" class="specs-section">
+      <div class="section-container">
+        
+        <div class="specs-header">
+          <div class="specs-tag">// BUILT TO LAST</div>
+          <h2 class="specs-title">TECHNICAL BENCHMARKS</h2>
+          <p class="specs-sub">We don't use blanks off a shelf. Every garment is cut, dyed, and sewn to our custom oversized streetwear pattern.</p>
+        </div>
+
+        <div class="specs-grid">
+          
+          <div class="spec-card">
+            <div class="spec-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div class="spec-number">240<span class="spec-unit">GSM</span></div>
+            <h3 class="spec-name">HEAVYWEIGHT COTTON</h3>
+            <p class="spec-detail">High-density 100% combed cotton yarn with substantial drape that maintains its boxy silhouette without sagging or warping.</p>
+          </div>
+
+          <div class="spec-card">
+            <div class="spec-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24M14.83 14.83l4.24 4.24M14.83 9.17l4.24-4.24M4.93 19.07l4.24-4.24"/></svg>
+            </div>
+            <div class="spec-number">00<span class="spec-unit">RESTOCK</span></div>
+            <h3 class="spec-name">STRICT ZERO RESTOCKS</h3>
+            <p class="spec-detail">Once an arc sells through its 50 allocated pieces, it enters the permanent archive. No reprint runs. Your piece stays rare.</p>
+          </div>
+
+          <div class="spec-card">
+            <div class="spec-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M7 7h10M7 12h10M7 17h10"/></svg>
+            </div>
+            <div class="spec-number">ORIG<span class="spec-unit">ART</span></div>
+            <h3 class="spec-name">HAND DRAWN IN TOKYO</h3>
+            <p class="spec-detail">All illustrations are drafted by independent anime manga artists. Zero stock templates or low-res vector rips.</p>
+          </div>
+
+          <div class="spec-card">
+            <div class="spec-icon">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+            <div class="spec-number">100<span class="spec-unit">% FREE</span></div>
+            <h3 class="spec-name">EXPRESS DISPATCH</h3>
+            <p class="spec-detail">Dispatched within 24 hours from Sydney & Tokyo hub. Free worldwide express shipping on all orders over $100.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================================= -->
+    <!-- 7. FOOTER                                                                 -->
+    <!-- ========================================================================= -->
+    <footer class="site-footer">
+      <div class="section-container">
+        
+        <div class="footer-top-row">
+          <div class="footer-brand-col">
+            <div class="footer-logo">
+              <span class="kanji-red">改善</span>
+              <span class="logo-name">KAIZEN APPAREL</span>
+            </div>
+            <p class="footer-tagline">
+              Wear the Arc. Anime-inspired heavyweight streetwear for otaku, gamers, and design minimalists. Dispatched from Sydney & Tokyo.
+            </p>
+            <div class="footer-social-links">
+              <a href="#" class="social-link" aria-label="Instagram">IG // @KAIZEN.ARCHIVE</a>
+              <a href="#" class="social-link" aria-label="TikTok">TT // @KAIZEN.STREET</a>
+              <a href="#" class="social-link" aria-label="Discord">DISCORD // ARC_COMMUNITY</a>
+            </div>
+          </div>
+
+          <div class="footer-links-col">
+            <h4 class="footer-heading">NAVIGATION</h4>
+            <ul>
+              <li><a href="#hero">ORIGIN HERO</a></li>
+              <li><a href="#drops-slider">DROP CATALOG</a></li>
+              <li><a href="#scroll-stack">VAULT STACK</a></li>
+              <li><a href="#lookbook-arc">ARC LORE</a></li>
+              <li><a href="#specs">SPECS & GSM</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-links-col">
+            <h4 class="footer-heading">COMMUNITY</h4>
+            <ul>
+              <li><a href="#">DROP CALENDAR</a></li>
+              <li><a href="#">SIZE ARCHITECTURE</a></li>
+              <li><a href="#">GARMENT CARE GUIDE</a></li>
+              <li><a href="#">COLLABORATIONS</a></li>
+              <li><a href="#">RETURNS & POLICY</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-newsletter-col">
+            <h4 class="footer-heading">DROP DISPATCH ALERT</h4>
+            <p class="newsletter-sub">Get secret access codes 15 minutes before the next drop launches to avoid instant sell-outs.</p>
+            <form id="newsletter-form" class="newsletter-form">
+              <input type="email" placeholder="ENTER YOUR EMAIL..." required class="newsletter-input" aria-label="Email Address">
+              <button type="submit" class="newsletter-submit-btn">JOIN</button>
+            </form>
+            <span class="newsletter-status" id="newsletter-status"></span>
+          </div>
+        </div>
+
+        <div class="footer-bottom-row">
+          <div class="mono-dim">© 2025 KAIZEN APPAREL & ZENJI STUDIO. ALL RIGHTS RESERVED.</div>
+          <div class="mono-dim">DESIGNED WITH KINETIC SCROLL & CANVAS ENGINE</div>
+          <div class="mono-dim">NO RESTOCKS. EVER.</div>
+        </div>
+
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- SLIDE-OVER SHOPPING BAG DRAWER                                            -->
+  <!-- ========================================================================= -->
+  <div id="cart-drawer-overlay" class="cart-drawer-overlay">
+    <div id="cart-drawer" class="cart-drawer" role="dialog" aria-modal="true" aria-label="Shopping Bag">
+      
+      <div class="cart-drawer-header">
+        <div class="cart-drawer-title">
+          <span>YOUR_BAG</span>
+          <span id="cart-items-count-badge" class="cart-count-badge">[0 ITEMS]</span>
+        </div>
+        <button id="close-cart-btn" class="close-drawer-btn" aria-label="Close Shopping Bag">✕</button>
+      </div>
+
+      <!-- FREE SHIPPING PROGRESS -->
+      <div class="cart-shipping-bar-wrap">
+        <div class="shipping-info-row">
+          <span id="shipping-prompt-text">Add <strong id="shipping-diff-amount">$100.00 AUD</strong> for FREE Express Shipping</span>
+          <span id="shipping-percent-text">0%</span>
+        </div>
+        <div class="shipping-meter">
+          <div id="shipping-fill-bar" class="shipping-fill-bar"></div>
+        </div>
+      </div>
+
+      <!-- CART ITEMS LIST CONTAINER -->
+      <div id="cart-items-list" class="cart-items-list">
+        <!-- Rendered dynamically via JavaScript -->
+        <div class="cart-empty-state" id="cart-empty-state">
+          <div class="empty-icon">⛩</div>
+          <p class="empty-title">YOUR BAG IS EMPTY</p>
+          <p class="empty-sub">Explore the drop and claim your limited shonen piece before it's archived.</p>
+          <button class="btn btn-primary" id="empty-shop-now-btn">EXPLORE DROPS</button>
+        </div>
+      </div>
+
+      <!-- CART FOOTER WITH TOTALS & CHECKOUT -->
+      <div class="cart-drawer-footer">
+        <div class="cart-discount-row">
+          <input type="text" id="promo-input" placeholder="PROMO CODE (TRY 'ZEN10')" class="promo-input">
+          <button id="apply-promo-btn" class="apply-promo-btn">APPLY</button>
+        </div>
+        <div id="promo-message" class="promo-message"></div>
+
+        <div class="cart-subtotal-row">
+          <span>SUBTOTAL:</span>
+          <span id="cart-subtotal-display" class="subtotal-val">$0.00 AUD</span>
+        </div>
+        <div class="cart-subtotal-row mono-dim">
+          <span>ESTIMATED TAX & SHIPPING:</span>
+          <span id="cart-shipping-display">CALCULATED AT CHECKOUT</span>
+        </div>
+
+        <button id="checkout-btn" class="btn btn-primary checkout-btn" disabled>
+          <span>PROCEED TO CHECKOUT</span>
+          <span class="checkout-arrow">→</span>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- QUICK VIEW PRODUCT MODAL                                                  -->
+  <!-- ========================================================================= -->
+  <div id="quick-view-modal" class="modal-overlay" aria-hidden="true">
+    <div class="modal-window">
+      <button id="close-modal-btn" class="modal-close-btn" aria-label="Close Modal">✕</button>
+      
+      <div class="modal-body-split">
+        <!-- MODAL GALLERY -->
+        <div class="modal-gallery">
+          <div class="modal-main-img-wrap">
+            <img id="modal-active-img" src="" alt="Product View" class="modal-active-img">
+          </div>
+          <div class="modal-thumbnails" id="modal-thumbs">
+            <!-- Thumbs injected by JS -->
+          </div>
+        </div>
+
+        <!-- MODAL DETAILS -->
+        <div class="modal-details">
+          <div class="modal-meta-top">
+            <span id="modal-drop-id" class="badge-tag">ARC_01</span>
+            <span class="badge-stock">LIMITED RUN</span>
+          </div>
+
+          <h2 id="modal-product-name" class="modal-title">WARRIOR SPIRIT TEE</h2>
+
+          <div class="modal-price-row">
+            <span id="modal-price-current" class="price-current">$33.99 AUD</span>
+            <span id="modal-price-original" class="price-original">$39.99 AUD</span>
+            <span class="price-tag">240GSM COMBED COTTON</span>
+          </div>
+
+          <p id="modal-desc" class="modal-desc">
+            Heavyweight 240GSM 100% cotton tee featuring custom anime shonen graphics. Garment enzyme washed to eliminate shrinkage and maintain structural drape.
+          </p>
+
+          <!-- SIZE SELECTOR -->
+          <div class="modal-size-section">
+            <div class="size-header">
+              <span>SELECT SIZE:</span>
+              <button id="modal-size-guide-toggle" class="size-guide-link">SIZE ARCHITECTURE GUIDE</button>
+            </div>
+            <div class="modal-sizes" id="modal-sizes-group">
+              <button class="size-choice" data-size="S">S</button>
+              <button class="size-choice active" data-size="M">M</button>
+              <button class="size-choice" data-size="L">L</button>
+              <button class="size-choice" data-size="XL">XL</button>
+              <button class="size-choice" data-size="XXL">XXL</button>
+            </div>
+          </div>
+
+          <!-- QUANTITY & ADD TO BAG -->
+          <div class="modal-purchase-row">
+            <div class="qty-stepper">
+              <button id="qty-minus-btn" class="qty-btn" aria-label="Decrease quantity">−</button>
+              <span id="qty-count-display" class="qty-display">1</span>
+              <button id="qty-plus-btn" class="qty-btn" aria-label="Increase quantity">+</button>
+            </div>
+
+            <button id="modal-add-to-bag-btn" class="btn btn-primary modal-add-btn">
+              <span>ADD TO BAG</span>
+              <span id="modal-btn-price">$33.99 AUD</span>
+            </button>
+          </div>
+
+          <!-- GUARANTEES -->
+          <div class="modal-perks">
+            <div class="perk-item">✓ Dispatched in 24 Hours</div>
+            <div class="perk-item">✓ 14-Day Free Returns</div>
+            <div class="perk-item">✓ Zero Restocks Guaranteed</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION POPUP -->
+  <div id="toast-notification" class="toast-notification" aria-live="polite">
+    <div class="toast-icon">✓</div>
+    <div class="toast-content">
+      <div id="toast-title" class="toast-title">ADDED TO BAG</div>
+      <div id="toast-message" class="toast-message">WARRIOR SPIRIT TEE [SIZE M]</div>
+    </div>
+  </div>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

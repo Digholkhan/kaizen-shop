@@ -1,0 +1,17 @@
+{
+  "name": "zen-streetwear",
+  "version": "1.0.0",
+  "description": "Ultra-Modern Anime Streetwear Experience with Interactive Hero Canvas Scrub, Circular Rotating Scroll Badge, Card Scroll Stack, and Kinetic Product Slider",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host --port 5173",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^6.0.0"
+  },
+  "dependencies": {
+    "canvas-confetti": "^1.9.4"
+  }
+}
